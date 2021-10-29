@@ -79,4 +79,13 @@ public class UsersController {
 		}
 		return new ResponseEntity<User>(user.get(), HttpStatus.OK);
 	}
+	
+//	@GetMapping("{lastname}")
+//	public ResponseEntity<User> GetByLastname(@PathVariable String lastname){
+//		var user = useRepo.findByLastname(lastname);
+//		if(user.isEmpty()) {
+//			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//		}
+//		return new ResponseEntity<User>(user.get(), HttpStatus.OK);
+//	}
 }

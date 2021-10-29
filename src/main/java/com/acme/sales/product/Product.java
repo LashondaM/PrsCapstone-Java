@@ -27,8 +27,8 @@ public class Product {
 	@Column(length=30, nullable=false)
 	private String name;
 	
-	@Column(columnDefinition="decimal(11,2) NOT NULL DEFAULT 0.0")
-	private double price;
+	@Column(columnDefinition="decimal(11,2) DEFAULT 0.0")
+	private Double price;
 	
 	@Column(length=30, nullable=false)
 	private String unit;
@@ -65,11 +65,11 @@ public class Product {
 		this.name = name;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
