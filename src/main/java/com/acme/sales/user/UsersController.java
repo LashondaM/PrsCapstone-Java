@@ -1,5 +1,7 @@
 package com.acme.sales.user;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -80,12 +82,10 @@ public class UsersController {
 		return new ResponseEntity<User>(user.get(), HttpStatus.OK);
 	}
 	
-//	@GetMapping("{lastname}")
-//	public ResponseEntity<User> GetByLastname(@PathVariable String lastname){
-//		var user = useRepo.findByLastname(lastname);
-//		if(user.isEmpty()) {
-//			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//		}
-//		return new ResponseEntity<User>(user.get(), HttpStatus.OK);
-//	}
+	@GetMapping("lastname/{lastname}")
+	public ResponseEntity<List<User>> GetByLastname(@PathVariable String lastname){
+		var users = useRepo.findByLastname(lastname);
+		
+		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+	}
 }
